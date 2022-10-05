@@ -1,0 +1,30 @@
+.nav {
+  height: 80px;
+  width: 100%;
+  background-color: #000;
+  color: #eee;
+  border-bottom: 3px solid #eee;
+}
+
+.nav,
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  justify-content: space-around;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.nav-links {
+  gap: 5vw;
+  font-size: 1.4rem;
+}
+
+.nav-links div:active {
+  transform: scale(0.95);
+}
