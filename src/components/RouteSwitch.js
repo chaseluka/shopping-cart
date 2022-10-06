@@ -12,7 +12,7 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/home" element={<Homepage />} />
-        <Route path="/home" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
     </Router>
   );

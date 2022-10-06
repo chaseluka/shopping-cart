@@ -16,7 +16,9 @@ code {
 #root {
   width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
   height: min-content;
+  max-width: 100%;
 }
 
 a {

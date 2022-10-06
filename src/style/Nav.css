@@ -28,3 +28,10 @@
 .nav-links div:active {
   transform: scale(0.95);
 }
+
+.cart {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
