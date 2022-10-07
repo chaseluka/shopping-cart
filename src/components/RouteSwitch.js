@@ -6,7 +6,7 @@ import React from "react";
 
 const RouteSwitch = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL + "/"}>
       <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
