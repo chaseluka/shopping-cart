@@ -5,6 +5,20 @@ import "../style/Shop.css";
 
 const Shop = () => {
   const [items, setItems] = useState([]);
+  const [cart, setCart] = useState(0);
+
+  useEffect(() => {
+    if (cart > 0) {
+      const quantity = document.getElementById("cart-amount");
+      quantity.textContent = cart;
+      quantity.style.display = "block";
+    }
+  }, [cart]);
+
+  const addToCart = (itemsAdded) => {
+    setCart(cart + parseInt(itemsAdded));
+  };
+
   useEffect(() => {
     const getItems = async () => {
       const raw = await fetch(
@@ -19,7 +33,7 @@ const Shop = () => {
   return (
     <div id="shop">
       {items.map((item) => {
-        return <Card info={item} id={uniqid()} />;
+        return <Card info={item} id={uniqid()} cart={addToCart} />;
       })}
     </div>
   );

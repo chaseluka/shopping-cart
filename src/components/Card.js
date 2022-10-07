@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/Card.css";
 
 const Card = (props) => {
+  const [number, setNumber] = useState(0);
+
+  const handleChange = (e) => {
+    setNumber(e.target.value);
+  };
+
+  const addToCart = () => {
+    props.cart(number);
+  };
+
   return (
     <div key={props.id} className="card">
       <div className="item-img">
@@ -10,13 +20,17 @@ const Card = (props) => {
       <div className="item-title">{props.info.title}</div>
       <div className="item-price">${props.info.price}</div>
       <div className="add-cart-container">
-        <div className="add-cart">Add to cart</div>
+        <div className="add-cart" onClick={addToCart}>
+          Add to cart
+        </div>
         <div className="quantity">
-          <div className="number">0</div>
-          <div className="change">
-            <div className="add">+</div>
-            <div className="minus">-</div>
-          </div>
+          <input
+            onChange={handleChange}
+            type="number"
+            id="number"
+            value={number}
+            max="99"
+          />
         </div>
       </div>
     </div>
